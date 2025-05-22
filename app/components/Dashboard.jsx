@@ -38,7 +38,7 @@ export default function DashboardPage() {
         throw new Error("User not authenticated");
       }
 
-      const response = await fetch(`http://localhost:5000/api/transactions/${user_data.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/${user_data.id}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ export default function DashboardPage() {
       const token = localStorage.getItem("token");
       const user_data = JSON.parse(localStorage.getItem("user"));
 
-      const response = await fetch(`http://localhost:5000/api/transactions/${type}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/${type}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

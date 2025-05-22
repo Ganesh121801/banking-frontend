@@ -19,7 +19,7 @@ const TransactionsPage = ({ params }) => {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/transactions/${id}`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/${id}`,
           {
             method: "GET",
             headers: {

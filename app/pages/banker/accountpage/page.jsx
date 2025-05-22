@@ -29,7 +29,7 @@ export default function UsersPage() {
     try {
       const token = localStorage.getItem("token");
   
-      const response = await fetch("http://localhost:5000/api/transactions/banker/users", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/banker/users`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ export default function UsersPage() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch(`http://localhost:5000/api/transactions/banker/users`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/banker/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
